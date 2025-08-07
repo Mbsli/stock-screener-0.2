@@ -35,7 +35,7 @@ def passes_technical_criteria(data):
     except:
         return False
 
-st.title(\"AI-Powered Stock Screener\")
+st.title("AI-Powered Stock Screener")
 
 user_tickers = st.text_input(\"Enter stock tickers separated by commas\", \"AAPL,MSFT,NVDA,GOOGL,TSLA,META\")
 tickers = [ticker.strip().upper() for ticker in user_tickers.split(',')]
