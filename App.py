@@ -1,4 +1,3 @@
-# force rebuild
 import yfinance as yf
 import pandas as pd
 import streamlit as st
@@ -35,9 +34,9 @@ def passes_technical_criteria(data):
     except:
         return False
 
-st.title("AI-Powered Stock Screener")
+st.title("📈 AI-Powered Stock Screener")
 
-user_tickers = st.text_input(\"Enter stock tickers separated by commas\", \"AAPL,MSFT,NVDA,GOOGL,TSLA,META\")
+user_tickers = st.text_input("Enter stock tickers separated by commas", "AAPL,MSFT,NVDA,GOOGL,TSLA,META")
 tickers = [ticker.strip().upper() for ticker in user_tickers.split(',')]
 
 results = []
@@ -51,7 +50,7 @@ for i, ticker in enumerate(tickers):
         results.append(ticker)
 
 if results:
-    st.success(\"High-Growth Stocks Identified:\")
+    st.success("High-Growth Stocks Identified:")
     st.write(results)
 else:
-    st.warning(\"No high-growth stocks found with current filters.\")
+    st.warning("No high-growth stocks found with current filters.")
